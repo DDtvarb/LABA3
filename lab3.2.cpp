@@ -5,7 +5,8 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "Ru");
 	string input;
-	getline(cin, input); // Вводим строку
+	cout << "Введите тест";
+	getline(cin, input); 
 	
 	int k = -1;
 	bool isWord = false;
