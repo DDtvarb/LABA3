@@ -1,29 +1,19 @@
-﻿
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <cstring>
 using namespace std;
 int main() {
-	setlocale(LC_ALL, "Ru");
-	string input;
-	cout << "Введите тест";
-	getline(cin, input); 
+	string str;
+	int count = 0;
+	cout << "Введите строку: ";
+	getline(cin, str);
+	const char* pstr = str.c_str();
+	cout << std::count(str.begin(), str.end(), ' ') << "\t";
+
+	while ((pstr = strchr(pstr + 1, ' ')) != NULL)
+		count++;
+
+	cout << count << endl;
 	
-	int k = -1;
-	bool isWord = false;
-
-	for (char c : input) {
-		if (c != ' ') {
-			if (!isWord) {
-				k++;
-				isWord = true;
-			}
-		}
-		else {
-			isWord = false;
-		}
-	}
-
-	cout << "Количество пробелов: " << (k) << endl;
-
-	return 0;
 }
