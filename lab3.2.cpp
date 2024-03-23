@@ -4,16 +4,16 @@
 #include <cstring>
 using namespace std;
 int main() {
+	setlocale(LC_ALL, "Ru");
 	string str;
 	int count = 0;
 	cout << "Введите строку: ";
 	getline(cin, str);
 	const char* pstr = str.c_str();
-	cout << std::count(str.begin(), str.end(), ' ') << "\t";
+	cout << "Количество пробелов:" << std::count(str.begin(), str.end(), ' '); // count считает колличество вхождений пробелов 
 
-	while ((pstr = strchr(pstr + 1, ' ')) != NULL)
-		count++;
+	
 
-	cout << count << endl;
+	
 	
 }
